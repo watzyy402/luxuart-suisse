@@ -1,0 +1,1023 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Luxart Suisse — Haute horlogerie, Alger</title>
+<meta name="description" content="Luxart Suisse, boutique de montres et accessoires de luxe à Alger depuis 2006. Revendeur officiel TAG Heuer, Victorinox, Montblanc. 02 Rue Didouche Mourad.">
+<meta name="theme-color" content="#efede8" id="metaTheme">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Marcellus&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Store","name":"Luxart Suisse","description":"Vente au détail de montres et accessoires de luxe","foundingDate":"2006","address":{"@type":"PostalAddress","streetAddress":"02 Rue Didouche Mourad","postalCode":"16000","addressLocality":"Alger","addressCountry":"DZ"},"openingHours":"Mo-Su 09:00-19:00","sameAs":["https://www.instagram.com/luxart_suisse_algerie/"]}
+</script>
+<style>
+/* ───────── Theme tokens (animatable) ───────── */
+@property --bg{syntax:'<color>';inherits:true;initial-value:#efede8}
+@property --bg2{syntax:'<color>';inherits:true;initial-value:#dcd8cf}
+@property --glow{syntax:'<color>';inherits:true;initial-value:rgba(190,155,85,.3)}
+@property --ink{syntax:'<color>';inherits:true;initial-value:#1c1610}
+@property --muted{syntax:'<color>';inherits:true;initial-value:#6a6252}
+@property --accent{syntax:'<color>';inherits:true;initial-value:#82601f}
+@property --vein{syntax:'<color>';inherits:true;initial-value:#c2a05c}
+@property --line{syntax:'<color>';inherits:true;initial-value:rgba(60,45,20,.2)}
+@property --panel{syntax:'<color>';inherits:true;initial-value:rgba(255,255,255,.55)}
+
+/* Maison: white marble + gold, taken from the shop's profile picture */
+:root,[data-theme=maison]{--bg:#efede8;--bg2:#dcd8cf;--glow:rgba(190,155,85,.30);--ink:#1c1610;--muted:#6a6252;--accent:#82601f;--vein:#c2a05c;--line:rgba(60,45,20,.2);--panel:rgba(255,255,255,.55)}
+/* TAG Heuer: racing emerald */
+[data-theme=tag]{--bg:#0d5a43;--bg2:#04211a;--glow:rgba(70,220,160,.30);--ink:#eefaf4;--muted:#a6d3c2;--accent:#8fe8c1;--vein:#6fe0b0;--line:rgba(190,255,225,.22);--panel:rgba(2,25,18,.55)}
+/* Victorinox: Swiss-army red */
+[data-theme=victorinox]{--bg:#a0101c;--bg2:#47060b;--glow:rgba(255,90,75,.38);--ink:#fff2ee;--muted:#f2bfb5;--accent:#ffcfc2;--vein:#ff8f7e;--line:rgba(255,220,210,.25);--panel:rgba(50,3,6,.45)}
+/* Montblanc: ink and platinum */
+[data-theme=montblanc]{--bg:#181b2a;--bg2:#07080d;--glow:rgba(150,160,215,.26);--ink:#f2f2f6;--muted:#a6a9ba;--accent:#d6d9e8;--vein:#c9cde0;--line:rgba(210,214,235,.22);--panel:rgba(5,6,12,.55)}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html.lock,html.lock body{overflow:hidden}
+body{
+  margin:0;min-height:100vh;color:var(--ink);background:var(--bg);
+  font-family:'Jost',system-ui,-apple-system,'Segoe UI',sans-serif;font-size:1.0625rem;line-height:1.6;
+  overflow-x:hidden;
+  transition:--bg 1s ease,--bg2 1s ease,--glow 1s ease,--ink 1s ease,--muted 1s ease,--accent 1s ease,--vein 1s ease,--line 1s ease,--panel 1s ease;
+}
+body::before{content:"";position:fixed;inset:0;z-index:-3;
+  background:radial-gradient(90vmax 70vmax at 82% 6%,var(--glow),transparent 62%),linear-gradient(180deg,var(--bg),var(--bg2))}
+h1,h2,h3,h4,p,ul,dl,dd{margin:0;padding:0}
+svg{display:block}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0;padding:0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.display{font-family:'Marcellus','Trajan Pro','Cinzel',Georgia,serif;font-weight:400;line-height:1.04;letter-spacing:.005em}
+.num{font-variant-numeric:tabular-nums}
+.wrap{width:min(1240px,100% - 8vw);margin-inline:auto}
+.muted{color:var(--muted)}
+.lead{font-size:1.2rem;line-height:1.7;max-width:36rem}
+
+/* marble veins + grain (fixed, recoloured by theme) */
+.veins{position:fixed;inset:0;width:100%;height:100%;z-index:-2;pointer-events:none}
+.veins path{fill:none;stroke:var(--vein);stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:vein 3.4s cubic-bezier(.3,.7,.2,1) forwards}
+@keyframes vein{to{stroke-dashoffset:0}}
+.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+
+/* ───────── Nav ───────── */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 4vw;transition:background .4s,padding .3s,border-color .4s;border-bottom:1px solid transparent}
+.nav.scrolled{padding-block:10px;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-color:var(--line)}
+@supports not (background:color-mix(in srgb,red,blue)){.nav.scrolled{background:var(--bg)}}
+.logo{display:flex;flex-direction:column;align-items:center;text-decoration:none;line-height:1;font-family:'Marcellus',Georgia,serif}
+.logo small{font-size:.5rem;letter-spacing:.34em;color:var(--accent)}
+.logo b{font-weight:400;font-size:1.2rem;letter-spacing:.2em;margin:.3em 0 .35em}
+.links{display:flex;gap:2.2rem}
+.links a{text-decoration:none;font-size:.95rem;letter-spacing:.04em;opacity:.8;transition:opacity .2s}
+.links a:hover{opacity:1}
+.nav-r{display:flex;align-items:center;gap:18px}
+.lang{font-size:.85rem;letter-spacing:.06em;opacity:.8}
+.lang i{font-style:normal;margin:0 .35em;opacity:.5}
+.lang span.on{font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--accent)}
+.sel-btn{display:flex;align-items:center;gap:10px;padding:.5em 1.1em;border:1px solid var(--ink);border-radius:999px;font-size:.9rem;transition:background .25s,color .25s}
+.sel-btn:hover{background:var(--ink);color:var(--bg)}
+.sel-btn b{display:grid;place-items:center;min-width:1.5em;height:1.5em;padding:0 .3em;border-radius:99px;background:var(--accent);color:var(--bg);font-size:.75rem;font-weight:600}
+.sel-btn b.bump{animation:bump .5s}
+@keyframes bump{40%{transform:scale(1.5)}}
+.burger{display:none;width:34px;height:34px;position:relative}
+.burger i{position:absolute;left:6px;right:6px;height:1.5px;background:var(--ink);transition:transform .3s}
+.burger i:nth-child(1){top:12px}.burger i:nth-child(2){top:20px}
+.burger.on i:nth-child(1){transform:translateY(4px) rotate(45deg)}.burger.on i:nth-child(2){transform:translateY(-4px) rotate(-45deg)}
+
+/* section rail */
+.rail{position:fixed;right:clamp(10px,1.6vw,26px);top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:16px}
+.rail a{position:relative;width:11px;height:11px;border-radius:50%;border:1px solid var(--ink);opacity:.45;transition:all .35s}
+.rail a.on{background:var(--accent);border-color:var(--accent);opacity:1;transform:scale(1.3)}
+.rail a span{position:absolute;right:22px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:.8rem;letter-spacing:.04em;opacity:0;pointer-events:none;transition:opacity .25s;color:var(--ink)}
+.rail a:hover span,.rail a.on span{opacity:1}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;padding:.95em 1.7em;border-radius:999px;border:1px solid var(--ink);background:var(--ink);color:var(--bg);font-size:.95rem;letter-spacing:.03em;text-decoration:none;transition:transform .25s,background .25s,color .25s,opacity .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.link{font-size:.95rem;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--accent);text-decoration-thickness:1.5px}
+.link:hover{text-decoration-color:var(--ink)}
+
+/* ───────── Hero ───────── */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:120px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3vw;align-items:center}
+.hero h1{font-size:clamp(2.9rem,6.6vw,6.2rem);max-width:11ch}
+.hero-lead{margin-top:1.6rem;color:var(--muted);font-size:1.15rem;line-height:1.7;max-width:34rem}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:2.2rem}
+.hero-facts{display:flex;gap:3rem;flex-wrap:wrap;margin-top:2.6rem}
+.hero-facts p{display:flex;flex-direction:column;font-size:.85rem;color:var(--muted)}
+.hero-facts b{font-weight:500;font-size:1.25rem;color:var(--ink);margin-top:.15em}
+.hero-facts b .dot{display:inline-block;width:.5em;height:.5em;border-radius:50%;background:var(--accent);margin-right:.5em;vertical-align:.08em}
+.hero-watch{position:relative;display:grid;place-items:center;min-height:min(76vh,700px);perspective:1200px}
+.ring{position:absolute;left:50%;top:50%;translate:-50% -50%;border-radius:50%;pointer-events:none}
+.ring.r1{width:min(520px,88vw);aspect-ratio:1;border:1px solid var(--line)}
+.ring.r2{width:min(620px,100vw);aspect-ratio:1;border:1px dashed var(--line);animation:spin 120s linear infinite}
+@keyframes spin{to{rotate:360deg}}
+.float{animation:float 8s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px)}}
+.tilt{transition:transform .3s ease-out;transform-style:preserve-3d}
+.hero-watch svg{height:min(74vh,680px);width:auto;max-width:92vw;filter:drop-shadow(0 38px 34px rgba(50,35,10,.38))}
+.brandlinks{display:flex;gap:clamp(18px,4vw,56px);flex-wrap:wrap;align-items:baseline;margin-top:clamp(36px,6vh,70px);padding-top:22px;border-top:1px solid var(--line)}
+.brandlinks span{font-size:.85rem;color:var(--muted)}
+.brandlinks a{font-family:'Marcellus',Georgia,serif;font-size:clamp(1.3rem,2.4vw,2rem);text-decoration:none;position:relative}
+.brandlinks a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s}
+.brandlinks a:hover::after,.brandlinks a:focus-visible::after{transform:scaleX(1)}
+
+/* ───────── Maison ───────── */
+.sec{padding:clamp(80px,12vw,170px) 0}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:start}
+.about h2{font-size:clamp(2.3rem,4.8vw,4.4rem);max-width:13ch}
+.about-r p+p{margin-top:1.2rem}
+.about-r .muted{max-width:34rem}
+.facts{margin-top:2.6rem;border-top:1px solid var(--line)}
+.facts div{display:grid;grid-template-columns:9.5rem 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);font-size:1rem}
+.facts dt{color:var(--muted);font-size:.9rem}
+.facts dd{font-weight:500}
+
+.coll-intro{padding-block:clamp(60px,9vw,120px) clamp(20px,4vw,50px)}
+.coll-intro h2{font-size:clamp(2.4rem,6vw,5.4rem);max-width:14ch}
+.coll-intro .lead{margin-top:1.4rem;color:var(--muted)}
+
+/* ───────── Brand sections ───────── */
+.brand{position:relative;padding:clamp(70px,10vw,140px) 0 clamp(80px,11vw,150px);min-height:100svh}
+.brand-head{display:grid;grid-template-columns:1.25fr .75fr;gap:3vw;align-items:end;margin-bottom:clamp(36px,6vw,80px)}
+.brand-since{font-size:1rem;color:var(--accent);letter-spacing:.04em;display:flex;gap:1.4rem;flex-wrap:wrap;align-items:center}
+.brand-since b{font-weight:500;border:1px solid var(--accent);border-radius:99px;padding:.15em .85em;font-size:.85rem}
+.brand-name{font-size:clamp(3.6rem,12.5vw,11.5rem);margin-top:.12em;line-height:.95}
+.brand-tag{color:var(--muted);font-size:1.12rem;line-height:1.7;max-width:26rem;padding-bottom:1.2rem}
+.models{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,3vw,52px);align-items:start}
+.model:nth-child(2){margin-top:clamp(30px,8vw,130px)}
+.model:nth-child(3){margin-top:clamp(0px,3vw,46px)}
+.model-stage{position:relative;display:block;width:100%;aspect-ratio:.73}
+.model-stage::before{content:"";position:absolute;left:50%;top:50%;width:84%;aspect-ratio:1;border-radius:50%;translate:-50% -50%;border:1px solid var(--line);background:radial-gradient(circle,var(--glow),transparent 68%);transition:transform .7s cubic-bezier(.2,.8,.2,1),border-color .4s}
+.model-stage svg{position:relative;width:100%;height:100%;filter:drop-shadow(0 26px 22px rgba(0,0,0,.28));transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.model-stage:hover::before{transform:scale(1.09);border-color:var(--accent)}
+.model-stage:hover svg{transform:scale(1.05) rotate(-3deg)}
+.model-info{padding:6px 4px 0}
+.model-info h3{font-size:clamp(1.6rem,2.6vw,2.3rem)}
+.kind{color:var(--muted);font-size:.95rem;margin-top:.2rem}
+.price{font-size:.9rem;color:var(--muted);margin-top:.9rem}
+.swrow{display:flex;gap:10px;margin-top:1rem;flex-wrap:wrap}
+.sw{width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--c),var(--e));box-shadow:0 0 0 1px var(--line);transition:box-shadow .25s,transform .25s;position:relative}
+.sw:hover{transform:scale(1.15)}
+.sw[aria-pressed=true]{box-shadow:0 0 0 2px var(--bg),0 0 0 3.5px var(--accent)}
+.sw.big{width:34px;height:34px}
+.sw.strap{background:var(--c)}
+.model-actions{display:flex;align-items:center;justify-content:space-between;margin-top:1.1rem}
+.add{width:42px;height:42px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;font-size:1.4rem;line-height:1;transition:background .25s,color .25s,transform .25s}
+.add:hover{background:var(--ink);color:var(--bg);transform:rotate(90deg)}
+
+/* ───────── Boutique ───────── */
+.shop{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,6vw,90px);align-items:center}
+.shop h2{font-size:clamp(2.4rem,5.4vw,5rem)}
+.shop .lead{margin-top:1.4rem;color:var(--muted)}
+.shop .facts{margin-top:2rem}
+.shop .facts a{text-underline-offset:4px;text-decoration-color:var(--accent)}
+.status{display:inline-flex;align-items:center;gap:.6em}
+.status::before{content:"";width:.55em;height:.55em;border-radius:50%;background:#2fb56a;box-shadow:0 0 0 4px rgba(47,181,106,.2)}
+.status.closed::before{background:#c9473a;box-shadow:0 0 0 4px rgba(201,71,58,.2)}
+.map{position:relative;border:1px solid var(--line);border-radius:999px 999px 24px 24px;overflow:hidden;aspect-ratio:.92;background:var(--panel)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.85) contrast(.95) sepia(.2)}
+footer{padding:50px 0 70px;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-end}
+.foot p{font-size:.9rem;color:var(--muted);max-width:34rem}
+.foot .logo{align-items:flex-start}
+
+/* ───────── Preview overlay ───────── */
+.overlay{position:fixed;inset:0;z-index:80;display:grid;grid-template-columns:1.1fr .9fr;color:var(--ink);
+  background:radial-gradient(70vmax 60vmax at 30% 20%,var(--glow),transparent 62%),linear-gradient(180deg,var(--bg),var(--bg2));
+  opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s,--bg 1s,--bg2 1s,--glow 1s,--ink 1s,--muted 1s,--accent 1s,--line 1s,--panel 1s}
+.overlay.open{opacity:1;visibility:visible}
+.x{position:absolute;top:22px;right:24px;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);z-index:3;transition:background .25s,border-color .25s}
+.x:hover{border-color:var(--ink)}
+.x span{position:absolute;left:13px;right:13px;top:50%;height:1.5px;background:var(--ink)}
+.x span:first-child{transform:rotate(45deg)}.x span:last-child{transform:rotate(-45deg)}
+.pv-stage{position:relative;display:grid;place-items:center;overflow:hidden}
+.pv-ring{position:absolute;left:50%;top:50%;translate:-50% -50%;width:min(66vh,80%);aspect-ratio:1;border-radius:50%;border:1px solid var(--line)}
+.pv-ring::after{content:"";position:absolute;inset:-9%;border-radius:50%;border:1px dashed var(--line);animation:spin 100s linear infinite}
+.pv-float{position:relative;animation:float 8s ease-in-out infinite}
+.pv-float svg{height:min(86vh,760px);width:auto;max-width:92vw;filter:drop-shadow(0 34px 30px rgba(0,0,0,.36))}
+.pv-float.swap svg{animation:swap .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes swap{from{opacity:.4;transform:scale(.97)}}
+.pv-dim{position:absolute;bottom:34px;left:50%;translate:-50% 0;display:flex;align-items:center;gap:14px;font-size:.9rem;color:var(--muted)}
+.pv-dim i{width:clamp(40px,8vw,110px);height:1px;background:var(--line)}
+.pv-dim b{font-weight:500;color:var(--ink)}
+.pv-panel{overflow-y:auto;padding:clamp(70px,9vh,110px) clamp(24px,4vw,64px) 40px;border-left:1px solid var(--line);background:var(--panel);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.pv-brand{color:var(--accent);font-size:1rem;letter-spacing:.04em}
+.pv-panel h2{font-size:clamp(2.4rem,4.4vw,4rem);margin:.15em 0 .1em}
+.pv-kind{color:var(--muted)}
+.pv-desc{margin-top:1.1rem;line-height:1.7;max-width:30rem}
+.opt{margin-top:1.7rem}
+.opt-h{display:flex;justify-content:space-between;align-items:baseline;font-size:.9rem;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:.5rem}
+.opt-h b{font-weight:500;color:var(--ink)}
+.pills{display:flex;gap:10px;margin-top:1rem}
+.pill{padding:.5em 1.1em;border-radius:99px;border:1px solid var(--line);font-size:.9rem;transition:all .25s}
+.pill:hover{border-color:var(--ink)}
+.pill[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.note{font-size:.82rem;color:var(--muted);margin-top:.8rem;line-height:1.5}
+.pv-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:1.4rem}
+.pv-nav{display:flex;align-items:center;gap:16px;margin-top:2.2rem;font-size:.9rem;color:var(--muted)}
+.pv-nav button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);font-size:1.3rem;line-height:1;transition:border-color .25s}
+.pv-nav button:hover{border-color:var(--ink)}
+
+/* ───────── Selection drawer ───────── */
+.scrim{position:fixed;inset:0;z-index:89;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;right:0;bottom:0;z-index:90;width:min(460px,100%);display:flex;flex-direction:column;background:var(--bg);color:var(--ink);border-left:1px solid var(--line);transform:translateX(102%);visibility:hidden;transition:transform .5s cubic-bezier(.2,.8,.2,1),visibility .5s}
+.drawer.open{transform:none;visibility:visible}
+.drawer-h{display:flex;justify-content:space-between;align-items:center;padding:24px 24px 18px;border-bottom:1px solid var(--line)}
+.drawer-h h2{font-size:2rem}
+.drawer-h .x{position:static}
+.drawer-body{flex:1;overflow-y:auto;padding:8px 24px}
+.empty{color:var(--muted);padding:2rem 0;line-height:1.7}
+.item{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.item svg{width:64px;height:88px;filter:drop-shadow(0 8px 8px rgba(0,0,0,.25))}
+.item h3{font-size:1.25rem}
+.item p{font-size:.85rem;color:var(--muted);line-height:1.45;margin-top:.15rem}
+.item button{font-size:1.3rem;width:34px;height:34px;border-radius:50%;border:1px solid var(--line)}
+.item button:hover{border-color:var(--ink)}
+.drawer-f{padding:18px 24px 24px;border-top:1px solid var(--line);display:grid;gap:14px}
+.field{display:grid;gap:6px;font-size:.88rem;color:var(--muted)}
+.field input{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:.55em 0;outline:0;transition:border-color .25s}
+.field input:focus{border-color:var(--accent)}
+.send{display:grid;gap:10px}
+.send .btn{width:100%}
+.drawer-f .link{justify-self:start}
+.toast{position:fixed;left:50%;bottom:28px;z-index:100;translate:-50% 30px;max-width:min(92vw,520px);padding:.9em 1.5em;border-radius:99px;background:var(--ink);color:var(--bg);font-size:.95rem;opacity:0;pointer-events:none;transition:opacity .35s,translate .35s}
+.toast.on{opacity:1;translate:-50% 0}
+
+/* ───────── Responsive ───────── */
+@media (max-width:1000px){
+  .links{position:fixed;top:64px;left:0;right:0;flex-direction:column;gap:0;padding:8px 4vw 18px;background:var(--bg);border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .4s;z-index:-1}
+  .links.open{transform:none}
+  .links a{padding:.9rem 0;border-bottom:1px solid var(--line);font-size:1.1rem}
+  .burger{display:block}
+  .hero-grid,.about,.shop,.brand-head{grid-template-columns:1fr}
+  .hero{padding-top:100px}
+  .hero-watch{min-height:62vh}
+  .hero-watch svg{height:58vh}
+  .brand-tag{padding-bottom:0}
+  .rail{display:none}
+  .models{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:22px;margin-inline:-4vw;padding:0 4vw 10px;scrollbar-width:none}
+  .models::-webkit-scrollbar{display:none}
+  .model{flex:0 0 76vw;max-width:340px;scroll-snap-align:center;margin-top:0!important}
+  .overlay{grid-template-columns:1fr;grid-template-rows:44vh 1fr}
+  .pv-float svg{height:42vh}
+  .pv-ring{width:min(40vh,70%)}
+  .pv-dim{bottom:10px}
+  .pv-panel{border-left:0;border-top:1px solid var(--line);padding-top:26px}
+  .map{border-radius:24px;aspect-ratio:1.1}
+}
+@media (max-width:560px){
+  .sel-btn span{display:none}
+  .sel-btn{padding:.4em .6em}
+  .nav-r{gap:12px}
+  .facts div{grid-template-columns:7rem 1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .veins path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body data-theme="maison">
+<svg class="veins" id="veins" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true"></svg>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="logo" href="#top" aria-label="Luxart Suisse, haute horlogerie, Alger"><small>HAUTE HORLOGERIE</small><b>LUXART SUISSE</b><small>ALGER</small></a>
+  <nav class="links" id="links" aria-label="Navigation">
+    <a href="#maison" data-i18n="nav_maison"></a>
+    <a href="#collections" data-i18n="nav_coll"></a>
+    <a href="#boutique" data-i18n="nav_shop"></a>
+  </nav>
+  <div class="nav-r">
+    <button class="lang" id="lang" aria-label="Français / English"><span data-l="fr">FR</span><i>/</i><span data-l="en">EN</span></button>
+    <button class="sel-btn" id="selBtn" data-i18n-aria="nav_sel" aria-label="Ma sélection"><span data-i18n="nav_sel"></span><b id="selCount">0</b></button>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+<nav class="rail" id="rail" aria-label="Sections"></nav>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="top" data-theme-sec="maison" data-rail="Accueil|Home">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <h1 class="display" data-i18n="h_title"></h1>
+          <p class="hero-lead" data-i18n="h_lead"></p>
+          <div class="hero-cta">
+            <a class="btn" href="#collections" data-i18n="h_cta1"></a>
+            <a class="btn ghost" href="#boutique" data-i18n="h_cta2"></a>
+          </div>
+          <div class="hero-facts">
+            <p><span data-i18n="k_time"></span><b class="num" id="clock">--:--:--</b></p>
+            <p><span data-i18n="k_shop"></span><b id="openNow"><span class="dot"></span>…</b></p>
+          </div>
+        </div>
+        <div class="hero-watch" id="heroWatch">
+          <div class="ring r1"></div><div class="ring r2"></div>
+          <div class="float"><div class="tilt" id="tilt"></div></div>
+        </div>
+      </div>
+      <nav class="brandlinks" id="brandlinks">
+        <span data-i18n="h_brands"></span>
+        <a href="#tag" data-t="tag">TAG Heuer</a>
+        <a href="#victorinox" data-t="victorinox">Victorinox</a>
+        <a href="#montblanc" data-t="montblanc">Montblanc</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- MAISON -->
+  <section class="sec" id="maison" data-theme-sec="maison" data-rail="La maison|The house">
+    <div class="wrap about">
+      <h2 class="display" data-i18n="m_title"></h2>
+      <div class="about-r">
+        <p class="lead" data-i18n="m_p1"></p>
+        <p class="muted" data-i18n="m_p2"></p>
+        <dl class="facts">
+          <div><dt data-i18n="fk_brands"></dt><dd>TAG Heuer, Victorinox, Montblanc</dd></div>
+          <div><dt data-i18n="fk_official"></dt><dd>TAG Heuer</dd></div>
+          <div><dt data-i18n="fk_service"></dt><dd data-i18n="fv_service"></dd></div>
+          <div><dt data-i18n="fk_addr"></dt><dd>02 Rue Didouche Mourad, 16000 Alger</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="coll-intro" id="collections" data-theme-sec="maison">
+    <div class="wrap">
+      <h2 class="display" data-i18n="c_title"></h2>
+      <p class="lead" data-i18n="c_lead"></p>
+    </div>
+  </section>
+
+  <section class="brand" id="tag" data-theme-sec="tag" data-brand="tag" data-rail="TAG Heuer|TAG Heuer">
+    <div class="wrap">
+      <div class="brand-head"><div><p class="brand-since"></p><h2 class="display brand-name"></h2></div><p class="brand-tag"></p></div>
+      <div class="models"></div>
+    </div>
+  </section>
+
+  <section class="brand" id="victorinox" data-theme-sec="victorinox" data-brand="victorinox" data-rail="Victorinox|Victorinox">
+    <div class="wrap">
+      <div class="brand-head"><div><p class="brand-since"></p><h2 class="display brand-name"></h2></div><p class="brand-tag"></p></div>
+      <div class="models"></div>
+    </div>
+  </section>
+
+  <section class="brand" id="montblanc" data-theme-sec="montblanc" data-brand="montblanc" data-rail="Montblanc|Montblanc">
+    <div class="wrap">
+      <div class="brand-head"><div><p class="brand-since"></p><h2 class="display brand-name"></h2></div><p class="brand-tag"></p></div>
+      <div class="models"></div>
+    </div>
+  </section>
+
+  <!-- BOUTIQUE -->
+  <section class="sec" id="boutique" data-theme-sec="maison" data-rail="Boutique|Boutique">
+    <div class="wrap shop">
+      <div>
+        <h2 class="display" data-i18n="s_title"></h2>
+        <p class="lead" data-i18n="s_lead"></p>
+        <dl class="facts" id="shopFacts"></dl>
+        <div class="hero-cta">
+          <a class="btn" id="dirBtn" target="_blank" rel="noopener" data-i18n="s_dir"></a>
+          <a class="btn ghost" id="dmBtn" target="_blank" rel="noopener" data-i18n="s_dm"></a>
+        </div>
+      </div>
+      <div class="map">
+        <iframe title="Luxart Suisse, 02 Rue Didouche Mourad, Alger" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=02%20Rue%20Didouche%20Mourad%2C%20Alger&z=17&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="logo" href="#top" aria-label="Luxart Suisse"><small>HAUTE HORLOGERIE</small><b>LUXART SUISSE</b><small>ALGER</small></a>
+    <p data-i18n="foot_note"></p>
+  </div>
+</footer>
+
+<!-- Watch preview -->
+<div class="overlay" id="pv" role="dialog" aria-modal="true" aria-labelledby="pvName" aria-hidden="true" data-theme="maison">
+  <button class="x" id="pvClose" data-i18n-aria="pv_close" aria-label="Fermer"><span></span><span></span></button>
+  <div class="pv-stage">
+    <div class="pv-ring"></div>
+    <div class="pv-float" id="pvSvg"></div>
+    <div class="pv-dim"><i></i><b class="num" id="pvDim"></b><i></i></div>
+  </div>
+  <div class="pv-panel">
+    <p class="pv-brand" id="pvBrand"></p>
+    <h2 class="display" id="pvName"></h2>
+    <p class="pv-kind" id="pvKind"></p>
+    <p class="pv-desc" id="pvDesc"></p>
+    <div class="opt"><div class="opt-h"><span data-i18n="pv_dial"></span><b id="pvDialN"></b></div><div class="swrow" id="pvDials"></div></div>
+    <div class="opt"><div class="opt-h"><span data-i18n="pv_strap"></span><b id="pvStrapN"></b></div><div class="swrow" id="pvStraps"></div></div>
+    <div class="opt"><div class="opt-h"><span data-i18n="pv_size"></span><b id="pvSizeN"></b></div><div class="pills" id="pvSizes"></div><p class="note" data-i18n="pv_note"></p></div>
+    <p class="price" data-i18n="price"></p>
+    <div class="pv-actions">
+      <button class="btn" id="pvAdd" data-i18n="pv_add"></button>
+      <button class="btn ghost" id="pvView" data-i18n="pv_view"></button>
+    </div>
+    <div class="pv-nav">
+      <button id="pvPrev" data-i18n-aria="pv_prev" aria-label="Modèle précédent">‹</button>
+      <span id="pvPos" class="num"></span>
+      <button id="pvNext" data-i18n-aria="pv_next" aria-label="Modèle suivant">›</button>
+    </div>
+  </div>
+</div>
+
+<!-- Selection drawer -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="dTitle">
+  <div class="drawer-h"><h2 class="display" id="dTitle" data-i18n="d_title"></h2><button class="x" id="dClose" data-i18n-aria="pv_close" aria-label="Fermer"><span></span><span></span></button></div>
+  <div class="drawer-body" id="dList"></div>
+  <div class="drawer-f" id="dFoot">
+    <p class="note" data-i18n="d_intro"></p>
+    <label class="field"><span data-i18n="d_name"></span><input id="dName" type="text" autocomplete="name"></label>
+    <div class="send" id="dSend"></div>
+    <button class="link" id="dClear" data-i18n="d_clear"></button>
+  </div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+'use strict';
+document.documentElement.classList.add('js');
+
+/* ═════════ SHOP SETTINGS: edit these ═════════ */
+const SHOP = {
+  instagram: 'luxart_suisse_algerie',
+  address: '02 Rue Didouche Mourad, 16000 Alger',
+  whatsapp: '',   // e.g. '213550123456' (international format, digits only). Leave empty to hide the WhatsApp button.
+  phone: '',      // e.g. '+213 23 00 00 00'. Leave empty to hide.
+  email: '',      // e.g. 'contact@luxartsuisse.dz'. Leave empty to hide.
+  hours: { open: '09:00', close: '19:00' }   // every day (source: TAG Heuer store locator): confirm with the shop
+};
+
+/* ═════════ Helpers ═════════ */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pad = n => String(n).padStart(2, '0');
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ═════════ Language ═════════ */
+const L = {
+fr: {
+  title:'Luxart Suisse — Haute horlogerie, Alger',
+  nav_maison:'La maison', nav_coll:'Collections', nav_shop:'Boutique', nav_sel:'Ma sélection',
+  h_title:'Le temps, choisi avec exigence.',
+  h_lead:'Montres suisses et accessoires de luxe, au cœur d’Alger. Parcourez les collections, essayez chaque modèle à l’écran, puis passez nous voir au 02 Rue Didouche Mourad.',
+  h_cta1:'Explorer les collections', h_cta2:'Nous trouver', k_time:'Heure à Alger', k_shop:'La boutique', h_brands:'Découvrir par marque',
+  open_y:'Ouvert, ferme à {t}', open_n:'Fermé, ouvre à {t}', open_n2:'Fermé, ouvre demain à {t}',
+  m_title:'Une adresse horlogère à Alger, depuis 2006.',
+  m_p1:'Luxart Suisse vend au détail des montres et des accessoires de luxe. Revendeur officiel TAG Heuer, la boutique réunit aussi Victorinox et Montblanc, du chronographe de course à la montre habillée.',
+  m_p2:'Ici, on choisit une montre en la regardant de près, en changeant de bracelet, en comparant les cadrans. Ce site reprend ce geste : essayez les modèles, composez votre sélection, envoyez-la à la boutique.',
+  fk_brands:'Marques', fk_official:'Revendeur officiel', fk_service:'Service', fv_service:'Entretien et réparation TAG Heuer', fk_addr:'Adresse',
+  c_title:'Trois maisons, trois ambiances.',
+  c_lead:'Faites défiler : la couleur du site change avec chaque maison. Touchez une montre pour changer de cadran et de bracelet, simuler la taille et l’ajouter à votre sélection.',
+  since:'Depuis {y}', official:'Revendeur officiel',
+  price:'Prix sur demande', try:'Essayer', add:'Ajouter à ma sélection', added:'Ajouté à votre sélection',
+  pv_dial:'Cadran', pv_strap:'Bracelet', pv_size:'Taille du boîtier', pv_note:'Simulation indicative : les dimensions réelles se vérifient en boutique.',
+  pv_add:'Ajouter à ma sélection', pv_view:'Voir ma sélection', pv_close:'Fermer', pv_prev:'Modèle précédent', pv_next:'Modèle suivant',
+  d_title:'Ma sélection', d_empty:'Votre sélection est vide. Appuyez sur « + » sous une montre pour l’ajouter.',
+  d_intro:'Envoyez cette liste à la boutique. Elle vous répond avec la disponibilité et les prix.', d_name:'Votre nom (facultatif)',
+  d_wa:'Envoyer sur WhatsApp', d_ig:'Copier et ouvrir Instagram', d_mail:'Envoyer par e-mail', d_clear:'Tout retirer', d_remove:'Retirer',
+  d_copied:'Message copié. Collez-le dans la conversation Instagram.',
+  s_title:'Passez nous voir.', s_lead:'Une montre se découvre au poignet. La boutique vous accueille à Alger pour essayer les modèles, comparer les bracelets et vous faire conseiller.',
+  s_addr:'Adresse', s_hours:'Horaires', s_hours_v:'Tous les jours, de {o} à {c}', s_insta:'Instagram', s_phone:'Téléphone', s_mail:'E-mail', s_wa:'WhatsApp',
+  s_dir:'Itinéraire', s_dm:'Écrire sur Instagram',
+  foot_note:'Visuels illustratifs : modèles, coloris et disponibilités selon arrivage. Prix et confirmation en boutique.',
+  msg_hello:'Bonjour Luxart Suisse, je souhaite connaître le prix et la disponibilité de :', msg_name:'Nom', msg_thanks:'Merci.', msg_subject:'Demande de renseignements'
+},
+en: {
+  title:'Luxart Suisse — Haute horlogerie, Algiers',
+  nav_maison:'The house', nav_coll:'Collections', nav_shop:'Boutique', nav_sel:'My selection',
+  h_title:'Time, chosen with care.',
+  h_lead:'Swiss watches and luxury accessories in the heart of Algiers. Browse the collections, try each model on screen, then visit us at 02 Rue Didouche Mourad.',
+  h_cta1:'Explore the collections', h_cta2:'Find us', k_time:'Time in Algiers', k_shop:'The boutique', h_brands:'Browse by brand',
+  open_y:'Open, closes at {t}', open_n:'Closed, opens at {t}', open_n2:'Closed, opens tomorrow at {t}',
+  m_title:'A watchmaking address in Algiers, since 2006.',
+  m_p1:'Luxart Suisse retails watches and luxury accessories. An official TAG Heuer retailer, the boutique also carries Victorinox and Montblanc, from racing chronographs to dress watches.',
+  m_p2:'Here you choose a watch by looking closely, swapping straps and comparing dials. This site follows the same gesture: try the models, build your selection, send it to the boutique.',
+  fk_brands:'Brands', fk_official:'Official retailer', fk_service:'Service', fv_service:'TAG Heuer servicing and repair', fk_addr:'Address',
+  c_title:'Three houses, three atmospheres.',
+  c_lead:'Keep scrolling: the colour of the site changes with each house. Tap a watch to change its dial and strap, simulate the size and add it to your selection.',
+  since:'Since {y}', official:'Official retailer',
+  price:'Price on request', try:'Try it', add:'Add to my selection', added:'Added to your selection',
+  pv_dial:'Dial', pv_strap:'Strap', pv_size:'Case size', pv_note:'Indicative simulation: check real dimensions in the boutique.',
+  pv_add:'Add to my selection', pv_view:'View my selection', pv_close:'Close', pv_prev:'Previous model', pv_next:'Next model',
+  d_title:'My selection', d_empty:'Your selection is empty. Tap “+” under a watch to add it.',
+  d_intro:'Send this list to the boutique. They will reply with availability and prices.', d_name:'Your name (optional)',
+  d_wa:'Send on WhatsApp', d_ig:'Copy and open Instagram', d_mail:'Send by email', d_clear:'Remove all', d_remove:'Remove',
+  d_copied:'Message copied. Paste it into the Instagram conversation.',
+  s_title:'Come and see us.', s_lead:'A watch is best discovered on the wrist. The boutique welcomes you in Algiers to try the models, compare straps and get advice.',
+  s_addr:'Address', s_hours:'Opening hours', s_hours_v:'Every day, {o} to {c}', s_insta:'Instagram', s_phone:'Phone', s_mail:'Email', s_wa:'WhatsApp',
+  s_dir:'Get directions', s_dm:'Message on Instagram',
+  foot_note:'Illustrative visuals: models, colours and availability vary by arrival. Prices and confirmation in the boutique.',
+  msg_hello:'Hello Luxart Suisse, I would like the price and availability of:', msg_name:'Name', msg_thanks:'Thank you.', msg_subject:'Product enquiry'
+}};
+let lang = 'fr';
+try {
+  const saved = localStorage.getItem('lx_lang');
+  lang = saved || ((navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'fr');
+} catch (e) {}
+if (lang !== 'en') lang = 'fr';
+const t = k => (L[lang][k] ?? L.fr[k] ?? k);
+const tx = o => typeof o === 'string' ? o : (o[lang] ?? o.fr);
+
+/* ═════════ Catalogue (edit to match real stock) ═════════ */
+const BRANDS = {
+  tag: { id:'tag', name:'TAG Heuer', since:1860, official:true,
+    tag:{ fr:'L’avant-garde horlogère suisse, née sur les circuits : chronographes, plongeuses et sportives au caractère affirmé.',
+          en:'Swiss watchmaking avant-garde, born at the racetrack: chronographs, divers and sports watches with real character.' } },
+  victorinox: { id:'victorinox', name:'Victorinox', since:1884,
+    tag:{ fr:'L’esprit Swiss Army : robustesse à toute épreuve, lisibilité parfaite et goût de l’aventure au quotidien.',
+          en:'The Swiss Army spirit: unbreakable toughness, perfect legibility and a taste for everyday adventure.' } },
+  montblanc: { id:'montblanc', name:'Montblanc', since:1906,
+    tag:{ fr:'L’élégance classique : des montres habillées aux lignes pures, pour les grandes occasions comme pour chaque jour.',
+          en:'Classic elegance: dress watches with clean lines, for big occasions and for every day.' } }
+};
+const D = (fr,en,c,e,m,h,s,x={}) => ({ n:{fr,en}, c, e, m, h, s, ...x });
+const S = (type,c,fr,en,metal) => ({ type, c, n:{fr,en}, metal });
+
+const MODELS = [
+ { id:'carrera', brand:'tag', name:'Carrera', kind:{fr:'Chronographe',en:'Chronograph'}, style:'chrono', markers:'baton', metal:'steel', bz:'metal', ticks:'60', sizes:[39,41,44], base:41,
+   desc:{fr:'Le chronographe emblématique, héritier de la course automobile. Un cadran épuré, une lisibilité immédiate.', en:'The emblematic chronograph with motorsport heritage. A clean dial and instant legibility.'},
+   dials:[ D('Bleu','Blue','#2e55b8','#0d2057','#f1cfa5','#f1cfa5','#ff8a3d',{sub:'#1b3a8c'}),
+           D('Vert','Green','#44a381','#12503b','#f1cfa5','#f1cfa5','#ff8a3d',{sub:'#2f805f'}),
+           D('Fuchsia','Fuchsia','#dc1c84','#780a46','#f8e6da','#f8e6da','#ffffff',{sub:'#b3126a'}),
+           D('Panda','Panda','#f3f0e9','#cdc8bc','#1a1a1a','#1a1a1a','#d62828',{sub:'#1d1d1d'}) ],
+   straps:[ S('bracelet',null,'Acier','Steel','steel'), S('leather','#17120f','Cuir noir','Black leather'), S('leather','#1d2b54','Cuir marine','Navy leather') ] },
+ { id:'aquaracer', brand:'tag', name:'Aquaracer', kind:{fr:'Plongeuse',en:'Diver'}, style:'diver', markers:'baton', date:true, metal:'steel', ticks:'60', sizes:[36,41,43], base:41,
+   desc:{fr:'La plongeuse élégante : lunette graduée, bracelet acier et allure sport-chic, à l’aise de la plage au bureau.', en:'The elegant diver: graduated bezel, steel bracelet and a sport-chic look, from beach to office.'},
+   dials:[ D('Bleu','Blue','#1f55a8','#0a1f4a','#f4f4f0','#f4f4f0','#ff7a1a',{bz:'#123677'}),
+           D('Noir','Black','#1b1c1f','#050506','#f1f1ec','#f1f1ec','#e53935',{bz:'#0f0f11'}),
+           D('Nacre','Pearl','#f5f2ee','#d8d2ca','#8b8f96','#6e737a','#c93a3a',{bz:'metal'}) ],
+   straps:[ S('bracelet',null,'Acier','Steel','steel'), S('rubber','#151515','Caoutchouc noir','Black rubber') ] },
+ { id:'formula1', brand:'tag', name:'Formula 1', kind:{fr:'Sport',en:'Sport'}, style:'sport', markers:'baton', date:true, metal:'steel', ticks:'60', sizes:[38,41,43], base:41,
+   desc:{fr:'Sportive et accessible, avec un look de paddock pour tous les jours.', en:'Sporty and accessible, with a paddock look for every day.'},
+   dials:[ D('Noir','Black','#17181b','#040405','#f2f2f2','#f2f2f2','#e11d2e',{bz:'#101113'}),
+           D('Rouge','Red','#b3141f','#5a060c','#f5f5f5','#f5f5f5','#ffffff',{bz:'#17181b'}),
+           D('Bleu','Blue','#1b3d86','#091a45','#f5f5f5','#f5f5f5','#ffb020',{bz:'#111214'}) ],
+   straps:[ S('bracelet',null,'Acier','Steel','steel'), S('rubber','#141414','Caoutchouc noir','Black rubber'), S('rubber','#b3141f','Caoutchouc rouge','Red rubber') ] },
+
+ { id:'inox', brand:'victorinox', name:'I.N.O.X.', kind:{fr:'Outdoor',en:'Outdoor'}, style:'diver', markers:'baton', date:true, metal:'steel', bz:'metal', ticks:'notch', sizes:[38,41,43], base:41,
+   desc:{fr:'Pensée pour encaisser les chocs : la montre outdoor emblématique de Victorinox.', en:'Built to take a beating: Victorinox’s emblematic outdoor watch.'},
+   dials:[ D('Blanc','White','#f4f4f1','#d6d6d0','#1b1b1b','#1b1b1b','#e2001a'),
+           D('Noir','Black','#1c1d20','#060607','#f0f0eb','#f0f0eb','#e2001a'),
+           D('Bleu','Blue','#27407f','#0b1a45','#f2f2ee','#f2f2ee','#e2001a') ],
+   straps:[ S('rubber','#17234a','Caoutchouc marine','Navy rubber'), S('rubber','#141414','Caoutchouc noir','Black rubber'), S('bracelet',null,'Acier','Steel','steel') ] },
+ { id:'maverick', brand:'victorinox', name:'Maverick', kind:{fr:'Sport-chic',en:'Sport-chic'}, style:'diver', markers:'baton', date:true, metal:'steel', ticks:'60', sizes:[34,40,43], base:40,
+   desc:{fr:'Un design épuré et affirmé, entre élégance urbaine et esprit sportif.', en:'A clean, confident design between urban elegance and sporting spirit.'},
+   dials:[ D('Noir','Black','#1b1c1f','#050506','#f1f1ec','#f1f1ec','#e2001a',{bz:'#111113'}),
+           D('Bleu','Blue','#254f9a','#0a1f4a','#f4f4f0','#f4f4f0','#e2001a',{bz:'#15356f'}),
+           D('Vert','Green','#1f5a3f','#0b2a1c','#f1f1ec','#f1f1ec','#e2001a',{bz:'#163f2c'}) ],
+   straps:[ S('bracelet',null,'Acier','Steel','steel'), S('rubber','#141414','Caoutchouc noir','Black rubber') ] },
+ { id:'airboss', brand:'victorinox', name:'Airboss', kind:{fr:'Aviation',en:'Aviation'}, style:'field', markers:'numerals', date:true, metal:'steel', bz:'metal', sizes:[39,42,45], base:42,
+   desc:{fr:'L’inspiration aviation : grands chiffres, grande lisibilité, caractère de pilote.', en:'Aviation inspiration: big numerals, great legibility, pilot character.'},
+   dials:[ D('Bleu','Blue','#294c8f','#0e2252','#f1ede2','#f1ede2','#e2001a'),
+           D('Noir','Black','#1a1b1d','#050506','#f1ede2','#f1ede2','#e2001a'),
+           D('Vert olive','Olive','#3b4a32','#18200f','#efe8d2','#efe8d2','#e2001a') ],
+   straps:[ S('leather','#7a4a26','Cuir brun','Brown leather'), S('leather','#17120f','Cuir noir','Black leather'), S('bracelet',null,'Acier','Steel','steel') ] },
+
+ { id:'starlegacy', brand:'montblanc', name:'Star Legacy', kind:{fr:'Habillée',en:'Dress'}, style:'dress', markers:'dress', metal:'steel', bz:'metal', sun:true, sizes:[36,39,42], base:39,
+   desc:{fr:'La montre habillée par excellence : lignes pures, cadran soleillé, élégance intemporelle.', en:'The dress watch par excellence: clean lines, sunburst dial, timeless elegance.'},
+   dials:[ D('Ivoire','Ivory','#f6f1e6','#d9cfba','#8c7340','#2a2118','#a8843f'),
+           D('Bleu nuit','Midnight','#1a2f63','#0a1534','#e8d6a7','#e8d6a7','#e8d6a7'),
+           D('Noir','Black','#1a1a1c','#050506','#d9c590','#d9c590','#d9c590'),
+           D('Or rose','Rose gold','#f3ebe0','#d8c6ae','#a5694e','#7b4a37','#a5694e',{cm:'rose'}) ],
+   straps:[ S('leather','#17120f','Cuir noir','Black leather'), S('leather','#4d2e18','Cuir brun','Brown leather'), S('leather','#1d2b54','Cuir bleu','Blue leather') ] },
+ { id:'m1858', brand:'montblanc', name:'1858', kind:{fr:'Vintage',en:'Vintage'}, style:'field', markers:'numerals', metal:'steel', bz:'metal', sizes:[38,40,42], base:40,
+   desc:{fr:'Un hommage vintage aux montres d’exploration d’autrefois : chiffres arabes et patine chaude.', en:'A vintage tribute to the exploration watches of old: Arabic numerals and a warm patina.'},
+   dials:[ D('Noir','Black','#17181a','#050505','#eadcb4','#eadcb4','#eadcb4'),
+           D('Vert','Green','#27432f','#0e1f14','#eadcb4','#eadcb4','#eadcb4'),
+           D('Crème','Cream','#efe4c9','#cdbd96','#2a2016','#2a2016','#9a3b22') ],
+   straps:[ S('leather','#6b3f1f','Cuir brun vintage','Vintage brown leather'), S('leather','#17120f','Cuir noir','Black leather') ] },
+ { id:'heritage', brand:'montblanc', name:'Heritage', kind:{fr:'Classique',en:'Classic'}, style:'dress', markers:'cardinal', date:'6', metal:'steel', bz:'metal', sun:true, sizes:[38,40,42], base:40,
+   desc:{fr:'Une montre classique et raffinée, pensée comme un objet qui se transmet.', en:'A refined classic, conceived as an object to be handed down.'},
+   dials:[ D('Argent','Silver','#e9e9ea','#b9bbbf','#222222','#222222','#c0392b'),
+           D('Bleu','Blue','#223a73','#0b1636','#e8e8ea','#e8e8ea','#e8e8ea') ],
+   straps:[ S('leather','#17120f','Cuir noir','Black leather'), S('leather','#4d2e18','Cuir brun','Brown leather') ] }
+];
+const byId = Object.fromEntries(MODELS.map(m => [m.id, m]));
+const st = Object.fromEntries(MODELS.map(m => [m.id, { d:0, s:0, z:m.base }]));
+const HERO = { id:'hero', name:'Luxart', kind:{fr:'Haute horlogerie',en:'Haute horlogerie'}, style:'dress', markers:'dress', metal:'gold', bz:'metal', sun:true, base:41,
+  dials:[ D('Ivoire','Ivory','#f7f2e6','#d9ccb0','#8a6a2c','#3a2c14','#a8843f') ], straps:[ S('leather','#2d1d10','Cuir','Leather') ] };
+
+/* ═════════ Watch renderer (SVG, original illustration) ═════════ */
+const CASE = {
+  steel:['#f7f9fb','#aab1b9','#eef1f4','#737b84','#dde2e7'],
+  gold:['#fff1c6','#cda84f','#f8e5a8','#8b6a23','#ecd38f'],
+  rose:['#ffe3d3','#d49a80','#f7cdb8','#945f4a','#efbfa8']
+};
+const hexLum = h => { if (!h || h[0] !== '#') return .5; const n = parseInt(h.slice(1), 16); return (.299*((n>>16)&255) + .587*((n>>8)&255) + .114*(n&255)) / 255; };
+const P = (a, r) => { const q = a * Math.PI / 180; return [200 + r*Math.sin(q), 320 - r*Math.cos(q)]; };
+const f1 = n => n.toFixed(1);
+const ln = (a, r1, r2, c, w) => { const [x1,y1] = P(a,r1), [x2,y2] = P(a,r2); return `<line x1="${f1(x1)}" y1="${f1(y1)}" x2="${f1(x2)}" y2="${f1(y2)}" stroke="${c}" stroke-width="${w}"/>`; };
+// Algeria is UTC+1 all year (no DST)
+const nowAlg = () => { const d = new Date(Date.now() + 3600000); return { h:d.getUTCHours(), m:d.getUTCMinutes(), s:d.getUTCSeconds(), ms:d.getUTCMilliseconds(), day:d.getUTCDate() }; };
+const handAngles = () => { const n = nowAlg(); let sec = n.s + n.ms/1000; if (reduceMotion) sec = n.s; const min = n.m + sec/60, hr = (n.h % 12) + min/60; return { h:hr*30, m:min*6, s:sec*6 }; };
+let uid = 0;
+const CARDVIEW = '10 64 380 520';
+
+function watchSVG(m, di, si, size, view, label) {
+  const d = m.dials[di], s = m.straps[si], id = 'w' + (++uid);
+  const ck = d.cm || m.metal || 'steel', sc = size / m.base, ang = handAngles(), day = nowAlg().day;
+  const [, vy, , vh] = (view || '0 0 400 640').split(' ').map(Number);
+  const stops = k => CASE[k].map((c, i) => `<stop offset="${i*25}%" stop-color="${c}"/>`).join('');
+  const bz = d.bz || m.bz || 'metal', bzf = bz === 'metal' ? `url(#${id}c2)` : bz;
+  const tc = (bz === 'metal' || hexLum(bz) > .5) ? '#1d1a16' : '#f5f3ec';
+  const U = n => `url(#${id}${n})`;
+
+  let o = `<svg class="watch" viewBox="${view || '0 0 400 640'}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${esc(label || m.name)}"><defs>
+  <linearGradient id="${id}c" x1="0" y1="0" x2="1" y2="1">${stops(ck)}</linearGradient>
+  <linearGradient id="${id}c2" x1="1" y1="0" x2="0" y2="1">${stops(ck)}</linearGradient>
+  ${s.type === 'bracelet' ? `<linearGradient id="${id}bh" x1="0" y1="0" x2="1" y2="0">${stops(s.metal || 'steel')}</linearGradient>` : ''}
+  <radialGradient id="${id}dg" cx="50%" cy="40%" r="65%"><stop offset="0" stop-color="${d.c}"/><stop offset="1" stop-color="${d.e}"/></radialGradient>
+  <linearGradient id="${id}gl" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".42"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  <linearGradient id="${id}ss" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".42"/><stop offset=".22" stop-color="#000" stop-opacity="0"/><stop offset=".78" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".42"/></linearGradient>
+  <linearGradient id="${id}fg" gradientUnits="userSpaceOnUse" x1="0" y1="${vy}" x2="0" y2="${vy + vh}"><stop offset="0" stop-color="#000"/><stop offset=".14" stop-color="#fff"/><stop offset=".86" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+  <mask id="${id}fm" maskUnits="userSpaceOnUse" x="0" y="0" width="400" height="640"><rect width="400" height="640" fill="${U('fg')}"/></mask>
+  <clipPath id="${id}dc"><circle cx="200" cy="320" r="90"/></clipPath>
+  <clipPath id="${id}t"><polygon points="152,12 248,12 262,236 138,236"/></clipPath>
+  <clipPath id="${id}b"><polygon points="138,404 262,404 248,628 152,628"/></clipPath>
+  </defs>`;
+
+  /* strap */
+  const xl = y => y < 320 ? 152 - 14*(y - 12)/224 : 138 + 14*(y - 404)/224, xr = y => 400 - xl(y);
+  const part = top => {
+    const y0 = top ? 12 : 404, y1 = top ? 236 : 628, pts = top ? '152,12 248,12 262,236 138,236' : '138,404 262,404 248,628 152,628';
+    let g = `<g clip-path="${U(top ? 't' : 'b')}">`;
+    if (s.type === 'bracelet') {
+      g += `<g fill="${U('bh')}" stroke="rgba(0,0,0,.42)" stroke-width=".8">`;
+      for (let k = 0; k < 8; k++) {
+        const y = y0 + k*32;
+        g += `<polygon points="${f1(xl(y))},${y} 178,${y} 178,${y+30} ${f1(xl(y+30))},${y+30}"/><polygon points="222,${y} ${f1(xr(y))},${y} ${f1(xr(y+30))},${y+30} 222,${y+30}"/><rect x="180" y="${y+16}" width="40" height="30" rx="6"/>`;
+      }
+      g += `</g><g fill="rgba(255,255,255,.16)">`;
+      for (let k = 0; k < 8; k++) g += `<rect x="184" y="${y0 + k*32 + 20}" width="32" height="22" rx="4"/>`;
+      g += `</g>`;
+    } else {
+      g += `<polygon points="${pts}" fill="${s.c}"/>`;
+      if (s.type === 'rubber') {
+        g += `<g stroke-width="1.2">`;
+        for (let y = y0 + 8; y < y1; y += 11) g += `<line x1="${f1(xl(y)+3)}" y1="${y}" x2="${f1(xr(y)-3)}" y2="${y}" stroke="rgba(0,0,0,.28)"/><line x1="${f1(xl(y)+3)}" y1="${y+1.6}" x2="${f1(xr(y)-3)}" y2="${y+1.6}" stroke="rgba(255,255,255,.1)"/>`;
+        g += `</g>`;
+      } else {
+        g += `<g stroke="rgba(255,255,255,.4)" stroke-width="1.2" stroke-dasharray="5 4" fill="none"><line x1="${f1(xl(y0+4)+8)}" y1="${y0+4}" x2="${f1(xl(y1-6)+8)}" y2="${y1-6}"/><line x1="${f1(xr(y0+4)-8)}" y1="${y0+4}" x2="${f1(xr(y1-6)-8)}" y2="${y1-6}"/></g>`;
+        if (!top) for (let k = 0; k < 3; k++) g += `<circle cx="200" cy="${y0 + 84 + k*34}" r="4.4" fill="rgba(0,0,0,.5)" stroke="rgba(255,255,255,.14)"/>`;
+      }
+      g += `<polygon points="${pts}" fill="${U('ss')}"/>`;
+    }
+    return g + `</g>`;
+  };
+  o += `<g mask="${U('fm')}">${part(true)}${part(false)}</g>`;
+
+  /* lugs + spring bars */
+  o += `<g fill="${U('c')}" stroke="rgba(0,0,0,.38)" stroke-width="1"><rect x="136" y="198" width="28" height="52" rx="12"/><rect x="236" y="198" width="28" height="52" rx="12"/><rect x="136" y="390" width="28" height="52" rx="12"/><rect x="236" y="390" width="28" height="52" rx="12"/></g>`;
+  o += `<g fill="${U('c2')}" stroke="rgba(0,0,0,.35)" stroke-width=".8"><rect x="162" y="221" width="76" height="7" rx="3.5"/><rect x="162" y="412" width="76" height="7" rx="3.5"/></g>`;
+
+  /* scaled head (size simulator) */
+  o += `<g transform="translate(200 320) scale(${sc.toFixed(3)}) translate(-200 -320)">`;
+  // crown + pushers
+  o += `<g fill="${U('c')}" stroke="rgba(0,0,0,.4)" stroke-width="1"><rect x="306" y="304" width="26" height="32" rx="5"/>`;
+  if (m.style === 'chrono') o += `<g transform="rotate(-34 200 320)"><rect x="308" y="313" width="24" height="14" rx="3"/></g><g transform="rotate(34 200 320)"><rect x="308" y="313" width="24" height="14" rx="3"/></g>`;
+  o += `</g><g stroke="rgba(0,0,0,.3)" stroke-width="1.2">`;
+  for (let i = 0; i < 5; i++) o += `<line x1="${312 + i*4.5}" y1="307" x2="${312 + i*4.5}" y2="333"/>`;
+  o += `</g>`;
+  // case + bezel
+  o += `<circle cx="200" cy="320" r="116" fill="${U('c')}" stroke="rgba(0,0,0,.42)" stroke-width="1.2"/><circle cx="200" cy="320" r="110" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="1.2"/>`;
+  o += `<circle cx="200" cy="320" r="105" fill="${bzf}" stroke="rgba(0,0,0,.35)" stroke-width="1"/>`;
+  if (m.ticks === '60') for (let i = 0; i < 60; i++) { const mj = i % 5 === 0; o += ln(i*6, mj ? 93 : 97.5, 102, tc, mj ? 2.4 : 1); }
+  if (m.ticks === 'notch') for (let i = 0; i < 12; i++) { const [x, y] = P(i*30, 98); o += `<rect x="${f1(x-4.5)}" y="${f1(y-6)}" width="9" height="12" rx="1.5" fill="rgba(0,0,0,.5)" transform="rotate(${i*30} ${f1(x)} ${f1(y)})"/>`; }
+  if (m.style === 'diver') o += `<polygon points="200,220 194.5,231 205.5,231" fill="${tc}" stroke="rgba(0,0,0,.4)" stroke-width=".6"/>`;
+  o += `<circle cx="200" cy="320" r="91" fill="none" stroke="rgba(0,0,0,.5)" stroke-width="1.6"/>`;
+  // dial
+  o += `<circle cx="200" cy="320" r="90" fill="${U('dg')}"/>`;
+  if (d.sun || m.sun) { o += `<g clip-path="${U('dc')}" stroke="rgba(255,255,255,.07)" stroke-width="1.4">`; for (let i = 0; i < 90; i += 1) o += ln(i*4, 4, 92, 'rgba(255,255,255,' + (i % 2 ? .07 : .02) + ')', 1.6); o += `</g>`; }
+  const mk = d.m, strokeM = hexLum(mk) > .5 ? 'rgba(0,0,0,.4)' : 'rgba(255,255,255,.25)';
+  if (['chrono', 'field', 'dress'].includes(m.style)) for (let i = 0; i < 60; i++) { const mj = i % 5 === 0; o += ln(i*6, mj ? 77 : 82, 87, mk, mj ? 1.8 : .7); }
+  // markers
+  const skip = new Set();
+  if (m.style === 'chrono') [3, 6, 9].forEach(x => skip.add(x));
+  if (m.date === true) skip.add(3);
+  if (m.date === '6') skip.add(6);
+  const bat = (h, w, y1, y2) => `<rect x="${200 - w/2}" y="${y1}" width="${w}" height="${y2 - y1}" rx="1.4" fill="${mk}" stroke="${strokeM}" stroke-width=".6" transform="rotate(${h*30} 200 320)"/>`;
+  for (let h = 0; h < 12; h++) {
+    if (skip.has(h)) continue;
+    if (m.markers === 'baton') {
+      if (h === 0 && m.style === 'diver') o += `<polygon points="200,238 188.5,262 211.5,262" fill="${mk}" stroke="${strokeM}" stroke-width=".6"/>`;
+      else if (h === 0 && m.style === 'chrono') o += bat(0, 4.5, 241, 263).replace('x="197.75"', 'x="193"') + bat(0, 4.5, 241, 263).replace('x="197.75"', 'x="202.5"');
+      else o += bat(h, m.style === 'chrono' ? 5 : 8, 241, 262);
+    } else if (m.markers === 'dress') {
+      if (h === 0) o += bat(0, 3.2, 244, 264).replace(/x="198\.4"/, 'x="194"') + bat(0, 3.2, 244, 264).replace(/x="198\.4"/, 'x="202.8"');
+      else o += bat(h, 3.2, 244, 264);
+    } else if (m.markers === 'numerals') {
+      const [x, y] = P(h*30, 62), num = h === 0 ? 12 : h;
+      o += ln(h*30, 76, 85, mk, 1.6) + `<text x="${f1(x)}" y="${f1(y)}" text-anchor="middle" dominant-baseline="central" font-family="Jost,Arial,sans-serif" font-weight="600" font-size="${h === 0 ? 20 : 18}" fill="${mk}">${num}</text>`;
+    } else if (m.markers === 'cardinal') {
+      if (h % 3 === 0) { const [x, y] = P(h*30, 62), num = h === 0 ? 12 : h; if (!skip.has(h)) o += `<text x="${f1(x)}" y="${f1(y)}" text-anchor="middle" dominant-baseline="central" font-family="Marcellus,Georgia,serif" font-size="22" fill="${mk}">${num}</text>`; }
+      else o += bat(h, 3, 246, 264);
+    }
+  }
+  // chrono registers
+  if (m.style === 'chrono') {
+    [[150, 320, 24, 25], [250, 320, 24, 300], [200, 372, 20, 95]].forEach(([cx, cy, r, a]) => {
+      o += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="${d.sub}" stroke="rgba(0,0,0,.45)" stroke-width="1.2"/>`;
+      for (let i = 0; i < 12; i++) { const q = i*30*Math.PI/180; o += `<line x1="${f1(cx + (r-5)*Math.sin(q))}" y1="${f1(cy - (r-5)*Math.cos(q))}" x2="${f1(cx + (r-2.5)*Math.sin(q))}" y2="${f1(cy - (r-2.5)*Math.cos(q))}" stroke="${mk}" stroke-width=".9" opacity=".7"/>`; }
+      const q = a*Math.PI/180; o += `<line x1="${cx}" y1="${cy}" x2="${f1(cx + (r-5)*Math.sin(q))}" y2="${f1(cy - (r-5)*Math.cos(q))}" stroke="${d.h}" stroke-width="1.5" stroke-linecap="round"/><circle cx="${cx}" cy="${cy}" r="2" fill="${d.h}"/>`;
+    });
+  }
+  // date window
+  if (m.date) { const wx = m.date === true ? 248 : 188, wy = m.date === true ? 310 : 366;
+    o += `<rect x="${wx}" y="${wy}" width="26" height="20" rx="2" fill="#f7f6f1" stroke="rgba(0,0,0,.55)" stroke-width="1"/><text x="${wx + 13}" y="${wy + 10.5}" text-anchor="middle" dominant-baseline="central" font-family="Jost,Arial,sans-serif" font-weight="500" font-size="13" fill="#1a1a1a">${day}</text>`; }
+  // dial text
+  o += `<text x="200" y="${m.style === 'chrono' ? 289 : 292}" text-anchor="middle" font-family="Jost,Arial,sans-serif" font-size="6.6" letter-spacing="2.4" fill="${mk}" opacity=".78">${esc(m.kind.en.toUpperCase())}</text>`;
+  // hands (initial angles set here, animated by JS)
+  const hs = d.h, ol = 'rgba(0,0,0,.5)';
+  o += `<g data-hand="h" transform="rotate(${ang.h.toFixed(2)} 200 320)"><path d="M194 322 L197 270 L200 259 L203 270 L206 322 L200 334 Z" fill="${hs}" stroke="${ol}" stroke-width=".8"/></g>`;
+  o += `<g data-hand="m" transform="rotate(${ang.m.toFixed(2)} 200 320)"><path d="M195.5 322 L198 247 L200 236 L202 247 L204.5 322 L200 332 Z" fill="${hs}" stroke="${ol}" stroke-width=".8"/></g>`;
+  o += `<g data-hand="s" transform="rotate(${ang.s.toFixed(2)} 200 320)"><line x1="200" y1="352" x2="200" y2="240" stroke="${d.s}" stroke-width="1.6" stroke-linecap="round"/><circle cx="200" cy="346" r="3.6" fill="${d.s}"/><circle cx="200" cy="320" r="4.6" fill="${d.s}" stroke="${ol}" stroke-width=".6"/></g>`;
+  o += `<circle cx="200" cy="320" r="2" fill="#111"/>`;
+  // crystal glare
+  o += `<g clip-path="${U('dc')}"><ellipse cx="158" cy="262" rx="84" ry="32" transform="rotate(-38 158 262)" fill="${U('gl')}"/></g>`;
+  o += `</g></svg>`;
+  return o;
+}
+
+/* live hands */
+let handEls = [];
+const collectHands = () => { handEls = $$('[data-hand]'); };
+function tickHands() {
+  const a = handAngles();
+  for (const el of handEls) if (el.isConnected) el.setAttribute('transform', `rotate(${a[el.dataset.hand].toFixed(2)} 200 320)`);
+  requestAnimationFrame(tickHands);
+}
+
+/* ═════════ Marble veins ═════════ */
+const VEINS = [
+  ['M-60 230C170 120 280 400 480 320S740 80 930 220 1250 470 1680 270', 1.7, .9],
+  ['M130 -30C180 150 80 310 270 430S430 720 370 1040', 1.1, .7],
+  ['M1090 -40C1190 190 1000 330 1190 520S1480 730 1390 1050', 2.3, .85],
+  ['M-50 770C250 690 430 890 700 800S1110 640 1390 760 1560 870 1680 810', 1.4, .7],
+  ['M480 320C540 430 470 520 570 610', .8, .6],
+  ['M930 220C950 120 1020 80 1100 20', .8, .6],
+  ['M1190 520C1270 570 1340 520 1400 590', .8, .55]
+];
+$('#veins').innerHTML = `<defs><filter id="vb" x="-5%" y="-5%" width="110%" height="110%"><feGaussianBlur stdDeviation="7"/></filter></defs>` +
+  ['glow', 'crisp'].map(k => `<g ${k === 'glow' ? 'filter="url(#vb)"' : ''}>${VEINS.map((v, i) =>
+    `<path d="${v[0]}" pathLength="1" stroke-width="${k === 'glow' ? v[1]*3.2 : v[1]}" opacity="${k === 'glow' ? v[2]*.35 : v[2]*.6}" style="animation-delay:${(i*.28).toFixed(2)}s"/>`).join('')}</g>`).join('');
+
+/* ═════════ Theme (the scroll-driven colour change) ═════════ */
+const THEME_BG = { maison:'#efede8', tag:'#0d5a43', victorinox:'#a0101c', montblanc:'#181b2a' };
+let curTheme = 'maison', hoverTheme = null;
+const applyTheme = n => { document.body.dataset.theme = n; $('#metaTheme').setAttribute('content', THEME_BG[n]); };
+const setTheme = n => { curTheme = n; if (!hoverTheme) applyTheme(n); };
+
+let railOn = 'top';
+const railItems = $$('[data-rail]');
+function renderRail() {
+  $('#rail').innerHTML = railItems.map(s => {
+    const [fr, en] = s.dataset.rail.split('|');
+    return `<a href="#${s.id}" data-id="${s.id}" class="${s.id === railOn ? 'on' : ''}" aria-label="${esc(lang === 'fr' ? fr : en)}"><span>${esc(lang === 'fr' ? fr : en)}</span></a>`;
+  }).join('');
+}
+const themeIO = new IntersectionObserver(es => {
+  es.forEach(e => {
+    if (!e.isIntersecting) return;
+    setTheme(e.target.dataset.themeSec);
+    if (e.target.dataset.rail) { railOn = e.target.id; $$('#rail a').forEach(a => a.classList.toggle('on', a.dataset.id === railOn)); }
+  });
+}, { rootMargin: '-48% 0px -48% 0px' });
+$$('[data-theme-sec]').forEach(s => themeIO.observe(s));
+
+/* hovering a brand in the hero previews its theme */
+$$('#brandlinks a').forEach(a => {
+  a.addEventListener('pointerenter', () => { hoverTheme = a.dataset.t; applyTheme(hoverTheme); });
+  a.addEventListener('pointerleave', () => { hoverTheme = null; applyTheme(curTheme); });
+  a.addEventListener('focus', () => { hoverTheme = a.dataset.t; applyTheme(hoverTheme); });
+  a.addEventListener('blur', () => { hoverTheme = null; applyTheme(curTheme); });
+});
+
+/* ═════════ Brand sections + models ═════════ */
+function modelHTML(m) {
+  const s = st[m.id], br = BRANDS[m.brand];
+  return `<article class="model" data-id="${m.id}">
+    <button class="model-stage" data-act="open" aria-label="${esc(t('try'))}: ${esc(br.name + ' ' + m.name)}">${watchSVG(m, s.d, s.s, s.z, CARDVIEW, br.name + ' ' + m.name)}</button>
+    <div class="model-info">
+      <h3 class="display">${esc(m.name)}</h3>
+      <p class="kind">${esc(tx(m.kind))}</p>
+      <div class="swrow" role="group" aria-label="${esc(t('pv_dial'))}">${m.dials.map((d, i) => `<button class="sw" data-act="dial" data-i="${i}" aria-pressed="${i === s.d}" aria-label="${esc(tx(d.n))}" title="${esc(tx(d.n))}" style="--c:${d.c};--e:${d.e}"></button>`).join('')}</div>
+      <p class="price">${esc(t('price'))}</p>
+      <div class="model-actions"><button class="link" data-act="open">${esc(t('try'))}</button><button class="add" data-act="add" aria-label="${esc(t('add'))}" title="${esc(t('add'))}">+</button></div>
+    </div></article>`;
+}
+function refreshModel(art) {
+  const m = byId[art.dataset.id], s = st[m.id], br = BRANDS[m.brand];
+  $('.model-stage', art).innerHTML = watchSVG(m, s.d, s.s, s.z, CARDVIEW, br.name + ' ' + m.name);
+  $$('.sw', art).forEach((b, i) => b.setAttribute('aria-pressed', i === s.d));
+  collectHands();
+}
+function renderBrands() {
+  $$('.brand').forEach(sec => {
+    const br = BRANDS[sec.dataset.brand];
+    $('.brand-since', sec).innerHTML = `<span>${esc(t('since').replace('{y}', br.since))}</span>${br.official ? `<b>${esc(t('official'))}</b>` : ''}`;
+    $('.brand-name', sec).textContent = br.name;
+    $('.brand-tag', sec).textContent = tx(br.tag);
+    $('.models', sec).innerHTML = MODELS.filter(m => m.brand === br.id).map(modelHTML).join('');
+  });
+  collectHands();
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('.model [data-act]'); if (!b) return;
+  const art = b.closest('.model'), id = art.dataset.id, act = b.dataset.act;
+  if (act === 'dial') { st[id].d = +b.dataset.i; refreshModel(art); }
+  else if (act === 'add') { addSel(id); bumpCount(); }
+  else openPV(id, b);
+});
+
+/* ═════════ Preview overlay ═════════ */
+const pv = $('#pv'); let pvId = null, pvOpener = null;
+const strapBg = s => s.type === 'bracelet' ? `linear-gradient(135deg,${CASE[s.metal || 'steel'].join(',')})` : s.c;
+function pvBuild() {
+  const m = byId[pvId], br = BRANDS[m.brand], s = st[m.id];
+  pv.dataset.theme = m.brand;
+  $('#pvBrand').textContent = br.name;
+  $('#pvName').textContent = m.name;
+  $('#pvKind').textContent = tx(m.kind);
+  $('#pvDesc').textContent = tx(m.desc);
+  $('#pvDials').innerHTML = m.dials.map((d, i) => `<button class="sw big" data-k="d" data-i="${i}" aria-label="${esc(tx(d.n))}" title="${esc(tx(d.n))}" style="--c:${d.c};--e:${d.e}"></button>`).join('');
+  $('#pvStraps').innerHTML = m.straps.map((x, i) => `<button class="sw big strap" data-k="s" data-i="${i}" aria-label="${esc(tx(x.n))}" title="${esc(tx(x.n))}" style="background:${strapBg(x)}"></button>`).join('');
+  $('#pvSizes').innerHTML = m.sizes.map(z => `<button class="pill num" data-k="z" data-i="${z}">${z} mm</button>`).join('');
+  const idx = MODELS.indexOf(m);
+  $('#pvPos').textContent = `${idx + 1} / ${MODELS.length}`;
+  pvUpdate(false);
+}
+function pvUpdate(animate = true) {
+  const m = byId[pvId], s = st[m.id], br = BRANDS[m.brand];
+  const box = $('#pvSvg');
+  box.innerHTML = watchSVG(m, s.d, s.s, s.z, null, br.name + ' ' + m.name);
+  if (animate && !reduceMotion) { box.classList.remove('swap'); void box.offsetWidth; box.classList.add('swap'); }
+  $$('#pvDials .sw').forEach((b, i) => b.setAttribute('aria-pressed', i === s.d));
+  $$('#pvStraps .sw').forEach((b, i) => b.setAttribute('aria-pressed', i === s.s));
+  $$('#pvSizes .pill').forEach(b => b.setAttribute('aria-pressed', +b.dataset.i === s.z));
+  $('#pvDialN').textContent = tx(m.dials[s.d].n);
+  $('#pvStrapN').textContent = tx(m.straps[s.s].n);
+  $('#pvSizeN').textContent = `Ø ${s.z} mm`;
+  $('#pvDim').textContent = `Ø ${s.z} mm`;
+  collectHands();
+}
+function lock(on) { document.documentElement.classList.toggle('lock', on); }
+function openPV(id, opener) {
+  pvId = id; pvOpener = opener || null; pvBuild();
+  pv.classList.add('open'); pv.setAttribute('aria-hidden', 'false'); lock(true);
+  setTimeout(() => $('#pvClose').focus(), 60);
+}
+function closePV() {
+  if (!pv.classList.contains('open')) return;
+  pv.classList.remove('open'); pv.setAttribute('aria-hidden', 'true');
+  if (!$('#drawer').classList.contains('open')) lock(false);
+  const art = $(`.model[data-id="${pvId}"]`); if (art) refreshModel(art);
+  if (pvOpener && pvOpener.isConnected) pvOpener.focus({ preventScroll: true });
+}
+pv.addEventListener('click', e => {
+  const b = e.target.closest('[data-k]'); if (!b) return;
+  const s = st[pvId], k = b.dataset.k;
+  if (k === 'd') s.d = +b.dataset.i; else if (k === 's') s.s = +b.dataset.i; else s.z = +b.dataset.i;
+  pvUpdate();
+});
+$('#pvClose').addEventListener('click', closePV);
+const stepPV = dir => { const i = (MODELS.indexOf(byId[pvId]) + dir + MODELS.length) % MODELS.length; pvId = MODELS[i].id; pvBuild(); };
+$('#pvPrev').addEventListener('click', () => stepPV(-1));
+$('#pvNext').addEventListener('click', () => stepPV(1));
+$('#pvAdd').addEventListener('click', () => { addSel(pvId); bumpCount(); });
+$('#pvView').addEventListener('click', () => { closePV(); setTimeout(openDrawer, 250); });
+
+/* ═════════ Selection drawer ═════════ */
+let sel = [];
+try { sel = JSON.parse(localStorage.getItem('lx_sel') || '[]'); } catch (e) {}
+sel = (Array.isArray(sel) ? sel : []).filter(x => x && byId[x.id] && byId[x.id].dials[x.d] && byId[x.id].straps[x.s]);
+const saveSel = () => { try { localStorage.setItem('lx_sel', JSON.stringify(sel)); } catch (e) {} };
+const bumpCount = () => { const b = $('#selCount'); b.classList.remove('bump'); void b.offsetWidth; b.classList.add('bump'); };
+function addSel(id) {
+  const s = st[id], k = `${id}|${s.d}|${s.s}|${s.z}`;
+  if (!sel.some(x => x.k === k)) sel.push({ k, id, d:s.d, s:s.s, z:s.z });
+  saveSel(); updSel(); toast(t('added'));
+}
+function updSel() { $('#selCount').textContent = sel.length; renderDrawer(); }
+function itemLine(x) { const m = byId[x.id]; return `${t('pv_dial')}: ${tx(m.dials[x.d].n)}, ${t('pv_strap')}: ${tx(m.straps[x.s].n)}, ${x.z} mm`; }
+function buildMsg() {
+  const name = $('#dName').value.trim();
+  const lines = sel.map((x, i) => `${i + 1}. ${BRANDS[byId[x.id].brand].name} ${byId[x.id].name} (${itemLine(x)})`);
+  return [t('msg_hello'), ...lines, '', name ? `${t('msg_name')}: ${name}` : null, t('msg_thanks')].filter(v => v !== null).join('\n');
+}
+function renderDrawer() {
+  const list = $('#dList'), has = sel.length > 0;
+  list.innerHTML = has ? sel.map((x, i) => { const m = byId[x.id];
+    return `<div class="item"><div>${watchSVG(m, x.d, x.s, x.z, CARDVIEW, m.name)}</div><div><h3 class="display">${esc(m.name)}</h3><p>${esc(BRANDS[m.brand].name)}<br>${esc(itemLine(x))}</p></div><button data-rm="${i}" aria-label="${esc(t('d_remove'))}" title="${esc(t('d_remove'))}">×</button></div>`; }).join('')
+    : `<p class="empty">${esc(t('d_empty'))}</p>`;
+  $('#dFoot').style.display = has ? '' : 'none';
+  const send = [];
+  if (SHOP.whatsapp) send.push(`<a class="btn" data-send="wa" target="_blank" rel="noopener">${esc(t('d_wa'))}</a>`);
+  send.push(`<a class="btn ${SHOP.whatsapp ? 'ghost' : ''}" data-send="ig" target="_blank" rel="noopener">${esc(t('d_ig'))}</a>`);
+  if (SHOP.email) send.push(`<a class="btn ghost" data-send="mail">${esc(t('d_mail'))}</a>`);
+  $('#dSend').innerHTML = send.join('');
+  collectHands();
+}
+$('#dList').addEventListener('click', e => { const b = e.target.closest('[data-rm]'); if (!b) return; sel.splice(+b.dataset.rm, 1); saveSel(); updSel(); });
+$('#dClear').addEventListener('click', () => { sel = []; saveSel(); updSel(); });
+$('#dSend').addEventListener('click', async e => {
+  const a = e.target.closest('[data-send]'); if (!a) return;
+  const msg = buildMsg(), k = a.dataset.send;
+  if (k === 'wa') a.href = `https://wa.me/${SHOP.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(msg)}`;
+  else if (k === 'mail') a.href = `mailto:${SHOP.email}?subject=${encodeURIComponent(t('msg_subject'))}&body=${encodeURIComponent(msg)}`;
+  else { a.href = `https://ig.me/m/${SHOP.instagram}`; await copyText(msg); toast(t('d_copied')); }
+});
+async function copyText(txt) {
+  try { await navigator.clipboard.writeText(txt); }
+  catch (e) { const ta = document.createElement('textarea'); ta.value = txt; ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); } catch (_) {} ta.remove(); }
+}
+const drawer = $('#drawer'), scrim = $('#scrim');
+function openDrawer() { drawer.classList.add('open'); scrim.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); lock(true); setTimeout(() => $('#dClose').focus(), 60); }
+function closeDrawer() { drawer.classList.remove('open'); scrim.classList.remove('open'); drawer.setAttribute('aria-hidden', 'true'); if (!pv.classList.contains('open')) lock(false); }
+$('#selBtn').addEventListener('click', openDrawer);
+$('#dClose').addEventListener('click', closeDrawer);
+scrim.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') { if (drawer.classList.contains('open')) closeDrawer(); else closePV(); }
+  if (pv.classList.contains('open') && !drawer.classList.contains('open')) { if (e.key === 'ArrowLeft') stepPV(-1); if (e.key === 'ArrowRight') stepPV(1); }
+});
+let toastT;
+function toast(msg) { const el = $('#toast'); el.textContent = msg; el.classList.add('on'); clearTimeout(toastT); toastT = setTimeout(() => el.classList.remove('on'), 2800); }
+
+/* ═════════ Boutique ═════════ */
+function renderShop() {
+  const rows = [[t('s_addr'), `<span>${esc(SHOP.address)}</span>`]];
+  rows.push([t('s_hours'), `<span>${esc(t('s_hours_v').replace('{o}', SHOP.hours.open).replace('{c}', SHOP.hours.close))}</span>`]);
+  rows.push([t('s_insta'), `<a href="https://instagram.com/${SHOP.instagram}" target="_blank" rel="noopener">@${esc(SHOP.instagram)}</a>`]);
+  if (SHOP.phone) rows.push([t('s_phone'), `<a href="tel:${esc(SHOP.phone.replace(/[^\d+]/g, ''))}">${esc(SHOP.phone)}</a>`]);
+  if (SHOP.whatsapp) rows.push([t('s_wa'), `<a href="https://wa.me/${esc(SHOP.whatsapp.replace(/\D/g, ''))}" target="_blank" rel="noopener">+${esc(SHOP.whatsapp.replace(/\D/g, ''))}</a>`]);
+  if (SHOP.email) rows.push([t('s_mail'), `<a href="mailto:${esc(SHOP.email)}">${esc(SHOP.email)}</a>`]);
+  $('#shopFacts').innerHTML = rows.map(r => `<div><dt>${esc(r[0])}</dt><dd>${r[1]}</dd></div>`).join('');
+  $('#dirBtn').href = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent('02 Rue Didouche Mourad, Alger');
+  $('#dmBtn').href = 'https://ig.me/m/' + SHOP.instagram;
+}
+
+/* ═════════ Clock + opening status (Algiers time) ═════════ */
+function tickClock() {
+  const n = nowAlg();
+  $('#clock').textContent = `${pad(n.h)}:${pad(n.m)}:${pad(n.s)}`;
+  const toMin = s => { const [h, m] = s.split(':').map(Number); return h*60 + m; };
+  const cur = n.h*60 + n.m, o = toMin(SHOP.hours.open), c = toMin(SHOP.hours.close);
+  const open = cur >= o && cur < c;
+  const txt = open ? t('open_y').replace('{t}', SHOP.hours.close) : (cur < o ? t('open_n').replace('{t}', SHOP.hours.open) : t('open_n2').replace('{t}', SHOP.hours.open));
+  $('#openNow').innerHTML = `<span class="dot" style="background:${open ? '#2fb56a' : '#c9473a'}"></span>${esc(txt)}`;
+}
+setInterval(tickClock, 1000);
+
+/* ═════════ Language switch ═════════ */
+function applyLang() {
+  document.documentElement.lang = lang;
+  $$('[data-i18n]').forEach(el => { el.innerHTML = t(el.dataset.i18n); });
+  $$('[data-i18n-aria]').forEach(el => el.setAttribute('aria-label', t(el.dataset.i18nAria)));
+  $$('#lang [data-l]').forEach(s => s.classList.toggle('on', s.dataset.l === lang));
+  document.title = t('title');
+  renderBrands(); renderRail(); renderShop(); updSel(); tickClock();
+  if (pv.classList.contains('open')) pvBuild();
+}
+$('#lang').addEventListener('click', () => { lang = lang === 'fr' ? 'en' : 'fr'; try { localStorage.setItem('lx_lang', lang); } catch (e) {} applyLang(); });
+
+/* ═════════ Nav behaviour, hero tilt ═════════ */
+const nav = $('#nav');
+const onScroll = () => nav.classList.toggle('scrolled', scrollY > 20);
+addEventListener('scroll', onScroll, { passive: true }); onScroll();
+$('#burger').addEventListener('click', e => { const on = $('#links').classList.toggle('open'); e.currentTarget.classList.toggle('on', on); e.currentTarget.setAttribute('aria-expanded', on); });
+$$('#links a').forEach(a => a.addEventListener('click', () => { $('#links').classList.remove('open'); $('#burger').classList.remove('on'); }));
+
+$('#tilt').innerHTML = watchSVG(HERO, 0, 0, 41, null, 'Luxart Suisse');
+if (!reduceMotion && matchMedia('(hover:hover)').matches) {
+  const hw = $('#heroWatch'), tl = $('#tilt');
+  hw.addEventListener('pointermove', e => { const r = hw.getBoundingClientRect(), x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5; tl.style.transform = `rotateY(${(x*18).toFixed(1)}deg) rotateX(${(-y*12).toFixed(1)}deg)`; });
+  hw.addEventListener('pointerleave', () => { tl.style.transform = ''; });
+}
+
+/* ═════════ Init ═════════ */
+applyLang();
+collectHands();
+requestAnimationFrame(tickHands);
+})();
+</script>
+</body>
+</html>
